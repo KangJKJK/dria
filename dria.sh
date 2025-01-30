@@ -102,9 +102,9 @@ installRequirements(){
     fi
 
     echo -e "${YELLOW}dkn-compute-node.zip 다운로드 중...${NC}"
-    curl -L -o /root/node/$NODENAME/dkn-compute-node.zip https://github.com/firstbatchxyz/dkn-compute-launcher/releases/latest/download/dkn-compute-launcher-linux-amd64.zip 
+    curl -L -o dkn-compute-node.zip https://github.com/firstbatchxyz/dkn-compute-launcher/releases/latest/download/dkn-compute-launcher-linux-amd64.zip
     echo -e "${YELLOW}dkn-compute-node.zip 압축 해제 중...${NC}"
-    unzip /root/node/$NODENAME/dkn-compute-node.zip -d /root/node/$NODENAME/  # 압축 해제 경로 지정
+    unzip dkn-compute-node.zip -d /root/node/$NODENAME/  # 압축 해제 경로 지정
     rm /root/node/$NODENAME/dkn-compute-node.zip 
     cd /root/node/$NODENAME/dkn-compute-node
 
