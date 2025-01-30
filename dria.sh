@@ -99,8 +99,6 @@ installRequirements(){
     unzip dkn-compute-node.zip -d /root/$NODENAME/  # 압축 해제 경로 지정
     rm /root/$NODENAME/dkn-compute-node.zip 
     cd /root/$NODENAME/dkn-compute-node
-    echo -e "${YELLOW}설치중에 DKN월렛 개인키를 입력하라고 나옵니다. 보상을 받으실 EVM 개인키를 입력하시면 됩니다.${NC}"
-
     echo -e "${GREEN}$NODENAME 컴퓨트 노드가 설치되었습니다.${NC}"
 }
 
@@ -117,6 +115,7 @@ run() {
     echo -e "${GREEN}첫번째로 실행시 테스트를 시작합니다. 테스트에 통과한다면 스크린을 분리 후 다시 생성하셔서 다음 명령어를 입력하세요.${NC}"
     echo -e "${GREEN}1. cd /root/$NODENAME/dkn-compute-node${NC}"
     echo -e "${GREEN}2. ./dkn-compute-launcher${NC}" 
+    echo -e "${YELLOW}설치중에 DKN월렛 개인키를 입력하라고 나옵니다. 보상을 받으실 EVM 개인키를 입력하시면 됩니다.${NC}"
     read -p "노드를 실행하시겠습니까? (y/n): " response
     if [[ $response == "y" ]]; then
         ./dkn-compute-launcher
