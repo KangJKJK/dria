@@ -48,23 +48,15 @@ dockerSetup(){
 
 # 초기 설정
 setup() {
-    cd ~
-    if [ -d "node" ]; then
-        echo -e "${GREEN}/root/node 디렉토리가 이미 존재합니다. 삭제 중...${NC}"
-        rm -rf node  # 기존 node 디렉토리 삭제
-        echo -e "${YELLOW}/root/node 디렉토리를 삭제했습니다.${NC}"
-    fi
-
-    mkdir node
-    echo -e "${YELLOW}/root/node 디렉토리를 생성했습니다.${NC}"
-    cd node
-
+    cd /root
     if [ -d "$NODENAME" ]; then
-        echo -e "${GREEN}/root/node/$NODENAME 디렉토리가 이미 존재합니다.${NC}"
-    else
-        mkdir $NODENAME
-        echo -e "${YELLOW}/root/node/$NODENAME 디렉토리를 생성했습니다.${NC}"
+        echo -e "${GREEN}/root/$NODENAME 디렉토리가 이미 존재합니다. 삭제 중...${NC}"
+        rm -rf $NODENAME  # 기존 디렉토리 삭제
+        echo -e "${YELLOW}/root/$NODENAME 디렉토리를 삭제했습니다.${NC}"
     fi
+
+    mkdir $NODENAME
+    echo -e "${YELLOW}/root/$NODENAME 디렉토리를 생성했습니다.${NC}"
     cd $NODENAME
 }
 
@@ -92,21 +84,21 @@ installRequirements(){
     echo -e "${YELLOW}$NODENAME 컴퓨트 노드 설치 중...${NC}"
 
     # dkn-compute-node 폴더가 존재하는지 확인
-    if [ -d "/root/node/$NODENAME/dkn-compute-node" ]; then
+    if [ -d "/root/$NODENAME/dkn-compute-node" ]; then
         echo -e "${GREEN}기존 dkn-compute-node 폴더가 존재합니다. 설치를 계속 진행합니다.${NC}"
     fi
 
-    if [ -f "/root/node/$NODENAME/dkn-compute-node.zip" ]; then
+    if [ -f "/root/$NODENAME/dkn-compute-node.zip" ]; then
         echo -e "${YELLOW}기존 dkn-compute-node.zip 파일을 삭제 중...${NC}"
-        rm -f /root/node/$NODENAME/dkn-compute-node.zip
+        rm -f /root/$NODENAME/dkn-compute-node.zip
     fi
 
     echo -e "${YELLOW}dkn-compute-node.zip 다운로드 중...${NC}"
     curl -L -o dkn-compute-node.zip https://github.com/firstbatchxyz/dkn-compute-launcher/releases/latest/download/dkn-compute-launcher-linux-amd64.zip
     echo -e "${YELLOW}dkn-compute-node.zip 압축 해제 중...${NC}"
-    unzip dkn-compute-node.zip -d /root/node/$NODENAME/  # 압축 해제 경로 지정
-    rm /root/node/$NODENAME/dkn-compute-node.zip 
-    cd /root/node/$NODENAME/dkn-compute-node
+    unzip dkn-compute-node.zip -d /root/$NODENAME/  # 압축 해제 경로 지정
+    rm /root/$NODENAME/dkn-compute-node.zip 
+    cd /root/$NODENAME/dkn-compute-node
     #echo -e "${YELLOW}보상을 받을 개인키를 입력해주세요(EVM)${NC}"
     #DKN_WALLET_SECRET_KEY=ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 
