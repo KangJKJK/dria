@@ -115,7 +115,7 @@ installRequirements(){
 run() {
     echo -e "${YELLOW}디스코드에 들어가세요: https://discord.com/invite/dria${NC}"
     echo -e "${YELLOW}노드 구동을 완료한 후 구글폼을 작성하세요: ${NC}"
-    echo -e "${YELLOW}https://docs.google.com/forms/d/e/1FAIpQLSeK090ejc4dg5x1ztb_yAOxGz5o1V8JUqDa-o3AwV1Lq7NpMA/viewform?pli=1${NC}"
+    echo -e "${YELLOW}https://form.typeform.com/to/Eav42hR3?typeform-source=www.google.com${NC}"
     echo -e "${YELLOW}대시보드사이트: https://steps.leaderboard.dria.co/${NC}"
     echo -e "${YELLOW}모델을 선택하라고 나오면 추천 모델은 다음과 같습니다: Gemini2:9b + Llama3_1_8B${NC}"
     echo -e "${YELLOW}Gemini APIKEY를 여기서 받으세요: https://aistudio.google.com/app/apikey${NC}"
