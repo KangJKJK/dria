@@ -107,6 +107,8 @@ installRequirements(){
     unzip dkn-compute-node.zip -d /root/node/$NODENAME/  # 압축 해제 경로 지정
     rm /root/node/$NODENAME/dkn-compute-node.zip 
     cd /root/node/$NODENAME/dkn-compute-node
+    #echo -e "${YELLOW}보상을 받을 개인키를 입력해주세요(EVM)${NC}"
+    #DKN_WALLET_SECRET_KEY=ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 
     echo -e "${GREEN}$NODENAME 컴퓨트 노드가 설치되었습니다.${NC}"
 }
@@ -122,7 +124,7 @@ run() {
     echo -e "${YELLOW}OpenAI APIKEY를 여기서 받으세요: https://platform.openai.com/api-keys${NC}"
     echo -e "${YELLOW}다음 주소에서 리더보드를 확인하세요: https://steps.leaderboard.dria.co/${NC}"
     echo -e "${GREEN}첫번째로 실행시 테스트를 시작합니다. 테스트에 통과한다면 스크린을 분리 후 다시 생성하셔서 다음 명령어를 입력하세요.${NC}"
-    echo -e "${GREEN}1. cd /root/node/$NODENAME/dkn-compute-node${NC}"
+    echo -e "${GREEN}1. cd /root/$NODENAME/dkn-compute-node${NC}"
     echo -e "${GREEN}2. ./dkn-compute-launcher${NC}" 
     read -p "노드를 실행하시겠습니까? (y/n): " response
     if [[ $response == "y" ]]; then
