@@ -99,8 +99,7 @@ installRequirements(){
     unzip dkn-compute-node.zip -d /root/$NODENAME/  # 압축 해제 경로 지정
     rm /root/$NODENAME/dkn-compute-node.zip 
     cd /root/$NODENAME/dkn-compute-node
-    #echo -e "${YELLOW}보상을 받을 개인키를 입력해주세요(EVM)${NC}"
-    #DKN_WALLET_SECRET_KEY=ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+    echo -e "${YELLOW}설치중에 DKN월렛 개인키를 입력하라고 나옵니다. 보상을 받으실 EVM 개인키를 입력하시면 됩니다.${NC}"
 
     echo -e "${GREEN}$NODENAME 컴퓨트 노드가 설치되었습니다.${NC}"
 }
