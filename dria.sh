@@ -105,17 +105,9 @@ installRequirements(){
 #노드 구동
 run() {
     echo -e "${YELLOW}디스코드에 들어가세요: https://discord.com/invite/dria${NC}"
-    echo -e "${YELLOW}노드 구동을 완료한 후 구글폼을 작성하세요: ${NC}"
-    echo -e "${YELLOW}https://form.typeform.com/to/Eav42hR3?typeform-source=www.google.com${NC}"
-    echo -e "${YELLOW}대시보드사이트: https://steps.leaderboard.dria.co/${NC}"
-    echo -e "${YELLOW}모델을 선택하라고 나오면 추천 모델은 다음과 같습니다: Gemini2:9b + Llama3_1_8B${NC}"
-    echo -e "${YELLOW}Gemini APIKEY를 여기서 받으세요: https://aistudio.google.com/app/apikey${NC}"
-    echo -e "${YELLOW}OpenAI APIKEY를 여기서 받으세요: https://platform.openai.com/api-keys${NC}"
-    echo -e "${YELLOW}다음 주소에서 리더보드를 확인하세요: https://steps.leaderboard.dria.co/${NC}"
+    echo -e "${YELLOW}대시보드사이트: https://dria.co/edge-ai/${NC}"
+    echo -e "${YELLOW}모델을 선택하라고 나오면 추천 모델은 다음과 같습니다: Ollama${NC}"
     echo -e "${GREEN}첫번째로 실행시 테스트를 시작합니다. 테스트에 통과한다면 스크린을 분리 후 다시 생성하셔서 다음 명령어를 입력하세요.${NC}"
-    echo -e "${GREEN}1. cd /root/$NODENAME/dkn-compute-node${NC}"
-    echo -e "${GREEN}2. ./dkn-compute-launcher${NC}" 
-    echo -e "${YELLOW}설치중에 DKN월렛 개인키를 입력하라고 나옵니다. 보상을 받으실 EVM 개인키를 입력하시면 됩니다.${NC}"
     read -p "노드를 실행하시겠습니까? (y/n): " response
     if [[ $response == "y" ]]; then
         ./dkn-compute-launcher
